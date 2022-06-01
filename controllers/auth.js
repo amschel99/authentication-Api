@@ -60,9 +60,9 @@ const loginUser=  async (req, res)=>{
         return res.status(400).send("invalid PASSWORD")
     }
     //create and assign a token
-    const token = jwt.sign({_id:user._id}, process.env.SECRET)
+    const token = jwt.sign({_id:user._id, name:user.name}, process.env.SECRET)
     
-  res.header("authToken", token).send(token)
+ res.status(200).json({message:"successs", token:token})
 return token
 
   

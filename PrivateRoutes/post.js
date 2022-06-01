@@ -7,6 +7,6 @@ const router=express.Router()
 router.get("/",auth,(req, res)=>{
    
   
-    res.json({gangsterLevel:100})
+    res.json(req.user)
 })
 module.exports= router
